@@ -3,8 +3,14 @@
 	"description": "Error handling PSR-15 middleware",
 	"type": "library",
 	"license": "MIT",
-	"minimum-stability": "dev",
-	"prefer-stable": true,
+	"homepage": "https://duon.run/error",
+	"authors": [
+		{
+			"name": "Ernst",
+			"email": "ernst@duon.run",
+			"role": "Developer"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"Duon\\Error\\": "src/"
@@ -15,62 +21,34 @@
 			"Duon\\Error\\Tests\\": "tests/"
 		}
 	},
-	"authors": [
-		{
-			"name": "ebene fünf GmbH",
-			"email": "info@ebenefuenf.de"
-		}
-	],
 	"require": {
+		"php": "^8.5",
 		"psr/http-message": "^1.1 || ^2.0",
 		"psr/http-server-handler": "^1.0",
 		"psr/http-server-middleware": "^1.0",
 		"psr/http-factory": "^1.0"
 	},
 	"require-dev": {
-		"duon/dev": "dev-main",
+		"duon/dev": "^2.5",
 		"duon/log": "dev-main",
-		"ernst/coverlyzer": "^0.2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
 		"nyholm/psr7": "^1.8",
-		"nyholm/psr7-server": "^1.0",
-		"phpunit/phpunit": "^12",
-		"vimeo/psalm": "^6.10"
+		"nyholm/psr7-server": "^1.0"
 	},
 	"scripts": {
 		"test": [
 			"composer docstest",
 			"./vendor/bin/phpunit --testdox --no-coverage --colors=always"
 		],
-		"check": "./vendor/bin/psalm --no-cache",
-		"check-github": "./vendor/bin/psalm --output-format=github --shepherd",
-		"lint": "./vendor/bin/phpcs -s -p src tests docs/code",
+		"types": "./vendor/bin/psalm --no-cache",
 		"coverage": [
-			"./vendor/bin/phpunit --testdox --coverage-clover=clover.xml --coverage-text --coverage-php=coverage/cover.php  --colors=always",
+			"./vendor/bin/phpunit --testdox --coverage-clover=clover.xml --coverage-text --coverage-php=coverage/cover.php --colors=always",
 			"./vendor/bin/coverlyzer coverage/cover.php"
 		],
 		"ci": [
 			"composer docstest",
 			"composer coverage",
-			"composer check",
-			"composer lint"
+			"composer types"
 		],
-		"github": [
-			"composer docstest",
-			"composer coverage",
-			"composer check-github",
-			"composer lint"
-		],
-		"docs": [
-			"composer docstest",
-			"./venv/bin/python ./venv/bin/mkdocs build"
-		],
-		"docserve": "./venv/bin/python ./venv/bin/mkdocs serve",
 		"docstest": "./vendor/bin/docs-test-runner ./docs/code"
-	},
-	"config": {
-		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
 	}
 }
