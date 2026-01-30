@@ -3,10 +3,13 @@
 .env
 .php*.cache
 .phpactor.json
+clover.xml
+composer.lock
 /coverage
 /data
+php-cs-fixer.php
+phpunit.xml
+psalm.xml
 /tmp
 /vendor
 __pycache__
-clover.xml
-composer.lock
