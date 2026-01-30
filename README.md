@@ -7,3 +7,7 @@
 [![Psalm level](https://shepherd.dev/github/duonrun/error/level.svg?)](https://duonrun.dev/error)
 
 A Error handling PSR-15 middleware.
+
+## License
+
+This project is licensed under the [MIT license](LICENSE.md).
