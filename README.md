@@ -1,5 +1,4 @@
-Duon Error
-===========
+# Duon Error
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/duonrun/error.svg)](https://scrutinizer-ci.com/g/duonrun/error/code-structure)
